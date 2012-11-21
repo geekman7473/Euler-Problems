@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <iomanip>
+#include <locale>
+#include <sstream>
 
 using namespace std;
 bool isPalin(string input);
@@ -17,23 +20,29 @@ int main(){
             }
         }
     }
+    cout << greatVal;
 }
 
 bool isPalin(string input){
-	if (input.size <= 0) {
+	int length;
+	if (input == ""){
 		return(false);
-	} else if (input.size == 1) {
+	}
+	for (length = 0; input[length] != '\0'; length++);
+	if (length <= 0) {
+		return(false);
+	} else if (length == 1) {
         return(true);
-	} else if (input.size % 2 == 0){
-		for (int i = 0; i < (input.size/2) ; i++){
-			if (input[i] != input[input.size - (i + 1)]){
+	} else if (length % 2 == 0){
+		for (int i = 0; i < (length/2) ; i++){
+			if (input[i] != input[length - (i + 1)]){
                 return(false);
 			}
 		}
 		return(true);
 	} else {
-        for (int i = 0; i < ((input.size - 1) /2); i++){
-            if (input[i] != input[input.size - (i + 1)]){
+        for (int i = 0; i < ((length - 1) /2); i++){
+            if (input[i] != input[length - (i + 1)]){
                 return(false);
             }
         }
