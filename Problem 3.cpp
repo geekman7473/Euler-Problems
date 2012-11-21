@@ -1,36 +1,26 @@
 #include<iostream>
 #include<cmath>
-#include<long long.h>
 
 using namespace std;
 bool isPrime(long long num);
 
 int main(){
     long long largePrime = 600851475143LL;
-    cout << "test1" << endl;
-    system("PAUSE");
-	bmint lastPrimeFactor = 0;
-	    cout << "test2" << endl;
-	    system("PAUSE");
-	for (long long n = 0; n <= largePrime; n++){
-            cout << "test3" << endl;
-            system("PAUSE");
+	long long lastPrimeFactor = 0;
+	for (long long n = 2; n <= largePrime - 1; n++){
 		if (largePrime % n == 0 && isPrime(n)){
-            cout << "test4" << endl;
-            system("PAUSE");
 			lastPrimeFactor = n;
 		}
-		cout << n << endl;
+		if (n % 100000000 == 0){
+			cout << n << endl;
+		}
 	}
 	cout << lastPrimeFactor;
 }
 bool isPrime(long long num){
-	for (long long i = 0; i <= bmfloat::sqrt(num); i++){
-            cout << "test5" << endl;
-            system("PAUSE");
+	long double numFloat = num;
+	for (long long i = 2; i <= numFloat; i++){
 		if (num % i == 0){
-                    cout << "test6" << endl;
-                    system("PAUSE");
 			return (false);
 		}
 	}
