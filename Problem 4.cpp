@@ -21,6 +21,7 @@ int main(){
         }
     }
     cout << greatVal;
+    system("PAUSE");
 }
 
 bool isPalin(string input){
