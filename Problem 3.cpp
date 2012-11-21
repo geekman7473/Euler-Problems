@@ -12,10 +12,11 @@ int main(){
 			lastPrimeFactor = n;
 		}
 		if (n % 600000000 == 0){
-			cout << n/600000000 << "/100" << endl;
+			cout << n/600000000 << "/1001" << endl;
 		}
 	}
 	cout << lastPrimeFactor;
+	system("PAUSE");
 }
 bool isPrime(long long num){
 	long double numFloat = num;
