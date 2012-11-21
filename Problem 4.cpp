@@ -6,12 +6,13 @@
 
 using namespace std;
 bool isPalin(string input);
+string conString (double input);
 
 int main(){
     int greatVal = 0;
     for (int x = 1; x < 1000; x++){
         for (int y = 1; y < 1000; y++){
-            if (isPalin(string to_string(x*y)) && (x*y) > greatVal){
+            if (isPalin(conString(x*y)) && (x*y) > greatVal){
                 greatVal = x*y;
             }
         }
@@ -38,4 +39,10 @@ bool isPalin(string input){
         }
         return(true);
 	}
+}
+
+string conString (double input){
+	ostringstream convert;
+	convert << input;
+	return (convert.str());
 }
