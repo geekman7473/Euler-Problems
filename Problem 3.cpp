@@ -11,8 +11,8 @@ int main(){
 		if (largePrime % n == 0 && isPrime(n)){
 			lastPrimeFactor = n;
 		}
-		if (n % 100000000 == 0){
-			cout << n << endl;
+		if (n % 600000000 == 0){
+			cout << n/600000000 << "/100" << endl;
 		}
 	}
 	cout << lastPrimeFactor;
