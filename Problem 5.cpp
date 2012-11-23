@@ -1,7 +1,7 @@
 #include<iostream>
 #include<cmath>
 
-#define DEBUG
+//#define DEBUG
 using namespace std;
 
 const int range = 20;
@@ -18,10 +18,14 @@ int main(){
     system("PAUSE");
     #endif
     int overall;
+    #ifdef DEBUG
     cout << "1 and 2" << endl;
+    #endif
     overall = lcm(1,2);
 	for(int i = 3; i < range; i++){
+	    #ifdef DEBUG
 	    cout << i << endl;
+	    #endif
 	    overall = lcm(overall, i);
         #ifdef DEBUG
         cout << "Overall LCM: " << overall << endl;
@@ -29,15 +33,6 @@ int main(){
 	}
 	cout << overall;
 	system("PAUSE");
-}
-
-bool isPrime(int num){
-	for (int i = 2; i <= sqrt(num); i++){
-		if (num % i == 0){
-			return (false);
-		}
-	}
-	return (true);
 }
 
 long lcm(int num1, int num2){
