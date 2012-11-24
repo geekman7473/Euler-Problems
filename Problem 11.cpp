@@ -34,7 +34,7 @@ long long greatestVal = 0;
             #ifdef DEBUG
             cout << x << " " << y << endl;
             #endif
-        if(grid[x][y] * grid[x][y+1] * grid[x][y+2] * grid[x][y+3] > greatestVal){
+        if(greatestVal < grid[x][y] * grid[x][y+1] * grid[x][y+2] * grid[x][y+3]){
             greatestVal = grid[x][y] * grid[x][y+1] * grid[x][y+2] + grid[x][y+3];
             #ifdef DEBUG
             cout << grid[x][y] << " "  << grid[x][y+1] << " " << grid[x][y+2] << " " << grid[x][y+3] << " " << grid[x][y] * grid[x][y+1] * grid[x][y+2] * grid[x][y+3] << endl;
@@ -44,8 +44,8 @@ long long greatestVal = 0;
         }
     }
     for(int x = 0; x <= 16; x++){
-        for(int y = 0; 7 <= 19; y++){
-            if(grid[x][y] * grid[x+1][y] * grid[x+2][y] * grid[x+3][y] > greatestVal){
+        for(int y = 0; y <= 19; y++){
+            if(greatestVal < grid[x][y] * grid[x+1][y] * grid[x+2][y] * grid[x+3][y]){
             greatestVal = grid[x][y] * grid[x+1][y] * grid[x+2][y] * grid[x+3][y];
             #ifdef DEBUG
             cout << grid[x][y] << " "  << grid[x+1][y] << " " << grid[x+2][y] << " " << grid[x+3][y] << " " << grid[x][y] * grid[x+1][y] * grid[x+2][y] * grid[x+3][y] << endl;
@@ -56,13 +56,20 @@ long long greatestVal = 0;
 }
     for(int x = 0; x <= 16; x++){
         for(int y = 0; y <= 16; y++){
-        if (grid[x][y] * grid[x+1][y+1] * grid[x+2][y+2] * grid[x+3][y+3] > greatestVal){
+        if (greatestVal < grid[x][y] * grid[x+1][y+1] * grid[x+2][y+2] * grid[x+3][y+3]){
             greatestVal = grid[x][y] * grid[x+1][y+1] * grid[x+2][y+2] * grid[x+3][y+3];
             #ifdef DEBUG
             cout << grid[x][y] << " "  << grid[x+1][y] << " " << grid[x+2][y] << " " << grid[x+3][y] << " " << grid[x][y] * grid[x+1][y] * grid[x+2][y] * grid[x+3][y] << endl;
             system("PAUSE");
             #endif
         }
+        }
+    }
+    for(int x = 19; x >= 4; x--){
+        for(int y = 0; y <= 16; y++){
+            if (greatestVal < grid[x][y] * grid[x-1][y+1] * grid[x-2][y+2] * grid[x-3][y+3]){
+                greatestVal = grid[x][y] * grid[x-1][y+1] * grid[x-2][y+2] * grid[x-3][y+3];
+            }
         }
     }
     cout << greatestVal << endl;
