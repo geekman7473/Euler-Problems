@@ -127,14 +127,23 @@ int main (){
         }
         for (int x = 1; tempSum != 0; x++){ //converts numbers to digits in final sum
             #ifdef DEBUG
-            cout <<currentDigit << " " << tempSum << " " << tempSum % 10 << " " << sum[currentDigit + (x - 1)] << endl;
+            cout <<currentDigit << " " << tempSum << " " << tempSum % 10 << " " << sum[(49 - currentDigit) + (x - 1)] << endl;
             system("PAUSE");
             #endif
-            sum[currentDigit + (x - 1)] += tempSum % 10;
+            sum[(49 - currentDigit) + (x - 1)] += tempSum % 10;
             tempSum -= tempSum % 10;
             tempSum /= 10;
         }
 	}
+	for (int x = 0; x <= 53; x++){//runs through digits of sum
+		for (double y = 0; sum[x] >= pow(10, y); y++){//Carrys digits accordingly
+		    if (y != 0){
+                  int YInt = y;
+		       sum[x + YInt] += floor(sum [x] / pow(10, y));
+		       sum[x] -= floor(sum [x] / pow(10, y)) * 10;
+           }
+		}
+}
 	for(int z = 53; z >= 0; z--){
     cout << sum[z] << " ";
             }
