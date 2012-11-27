@@ -138,7 +138,7 @@ int main (){
 	for (int x = 0; x <= 53; x++){//runs through digits of sum
 		for (double y = 0; sum[x] >= pow(10, y); y++){//Carrys digits accordingly
 		    if (y != 0){
-                  int YInt = y;
+               int YInt = y;
 		       sum[x + YInt] += floor(sum [x] / pow(10, y));
 		       sum[x] -= floor(sum [x] / pow(10, y)) * 10;
            }
@@ -148,19 +148,4 @@ int main (){
     cout << sum[z] << " ";
             }
 	system("PAUSE");
-}
-
-int powerOfTen(int exp){
-if(exp > 0){
-
-int product = 10;
-
-for (int x = 1; x < exp; x++){
-    product *= 10;
-}
-return (product);
-} else {
-// TODO (Justin Becker#1#): Add to the 0 power and negative power
-return(0);
-}
 }
