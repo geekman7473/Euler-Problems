@@ -123,10 +123,10 @@ int main (){
 	long tempSum = 0;
 	for(currentDigit = 49; currentDigit >= 0; currentDigit--){ //goes through the 50 digits
         for(currentNum = 0; currentNum < range; currentNum++){//goes trhough the 100 numbers
-            tempSum += grid[currentNum][currentDigit] - '0'; // adds current digits place to tempSum
+        tempSum += grid[currentNum][currentDigit] - '0'; // adds current digits place to tempSum
         }
         for (int x = 1; tempSum != 0; x++){ //converts numbers to digits in final sum
-            #ifdef DEBUG
+           #ifdef DEBUG
             cout <<currentDigit << " " << tempSum << " " << tempSum % 10 << " " << sum[(49 - currentDigit) + (x - 1)] << endl;
             system("PAUSE");
             #endif
