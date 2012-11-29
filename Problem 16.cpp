@@ -5,8 +5,10 @@ using namespace std;
 
 void multiply(int base);
 
-long product [400];
-const int productLength = 400;
+#define ARRAYSIZE 1024
+
+long product [ARRAYSIZE];
+const int productLength = ARRAYSIZE;
 const int exponet = 1000;
 const int base = 2;
 
@@ -27,6 +29,13 @@ int main(){
 	for (int x = productLength - 1; x >= 0 ; x--){
 		cout << product[x] << " ";
 	}
+	cout << endl << endl;
+	long long tempSum;
+	for (int x = 0; x < ARRAYSIZE; x++){
+        tempSum += product[x];
+	}
+	cout << tempSum << endl;
+	system("PAUSE");
 }
 
 void multiply(int base){
