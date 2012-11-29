@@ -5,14 +5,18 @@ using namespace std;
 
 void multiply(int base);
 
-#define ARRAYSIZE 1024
+#define ARRAYSIZE 20000
 
-long product [ARRAYSIZE];
+short product [ARRAYSIZE];
 const int productLength = ARRAYSIZE;
-const int exponet = 1000;
-const int base = 2;
 
 int main(){
+	long exponet = 1000;
+    long base = 2;
+	cout << "Enter a positive Base as an integer: ";
+	cin >> base;
+		cout << "Enter a positive Exponet as an integer: ";
+	cin >> exponet;
 	product[0] = 1;
 	for(int i = 1; i <= exponet; i++){
 		multiply(base);
@@ -30,12 +34,12 @@ int main(){
 		cout << product[x] << " ";
 	}
 	cout << endl << endl;
-	long long tempSum;
+	long long tempSum = 0;
 	for (int x = 0; x < ARRAYSIZE; x++){
         tempSum += product[x];
 	}
 	cout << tempSum << endl;
-	system("PAUSE");
+	//system("PAUSE");
 }
 
 void multiply(int base){
