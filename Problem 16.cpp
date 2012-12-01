@@ -5,7 +5,7 @@ using namespace std;
 
 void multiply(int base);
 
-#define ARRAYSIZE 20000
+#define ARRAYSIZE 2048
 
 short product [ARRAYSIZE];
 const int productLength = ARRAYSIZE;
@@ -15,7 +15,7 @@ int main(){
     long base = 2;
 	cout << "Enter a positive Base as an integer: ";
 	cin >> base;
-		cout << "Enter a positive Exponet as an integer: ";
+	cout << "Enter a Positive Exponent an integer: ";
 	cin >> exponet;
 	product[0] = 1;
 	for(int i = 1; i <= exponet; i++){
