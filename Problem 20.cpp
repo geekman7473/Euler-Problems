@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include <cstdlib>
 
 using namespace std;
 
@@ -37,7 +38,7 @@ int main(){
         tempSum += product[x];
 	}
 	cout << tempSum << endl;
-	//system("PAUSE");
+	system("PAUSE");
 }
 
 void multiply(int base){

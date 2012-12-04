@@ -56,30 +56,33 @@ long numOfLetters(int num){
     //cout << endl << "temp2: " << tempArray[2] << endl;
     if (tempArray[2] > 0){
         sum += charsInDigits[tempArray[2]] + 7;
+        #ifdef DEBUG
+        cout << "hundreds: " << charsInDigits[tempArray[2]] + 7;
+        #endif
         if ((tempArray[1] > 0 || tempArray[0] > 0) && tempArray[2] > 0){
-			#ifdef DEBUG
-			cout << "wut";
-			#endif
             sum += 3;
+            #ifdef DEBUG
+            cout << " add and ";
+            #endif
         }
     }
     if (tempArray[1] > 1){
-		#ifdef DEBUG
-		cout << "lol";
-		#endif
         sum += charsInTens[tempArray[1]];
+        #ifdef DEBUG
+        cout << "tens: " << charsInTens[tempArray[1]];
+        #endif
 	}
-	if (tempArray[0] > 0 && !(num % 100 >= 10 && num % 100 <= 20)){
+	if (tempArray[0] > 0 && !(num % 100 >= 10 && num % 100 < 20)){
             sum += charsInDigits[tempArray[0]];
             #ifdef DEBUG
-            cout << "why?";
+            cout <<" not teens " << charsInDigits[tempArray[0]];
             #endif
     }
     //todo: rewrite handleing of teens
-    if (num%100 >= 10 && num%100 <= 20){
+    if (num%100 >= 10 && num%100 < 20){
         sum += charsInTeens[tempArray[0]];
-		#ifdef DEBUG
-        cout << "lullllzzz";
+        #ifdef DEBUG
+        cout << " teens: " << charsInTeens[tempArray[0]];
         #endif
     }
     /*cout<<"here it goes  ";
