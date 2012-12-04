@@ -2,7 +2,7 @@
 #include<cmath>
 #include <cstdlib>
 
-#define DEBUG
+//#define DEBUG
 
 using namespace std;
 
@@ -57,19 +57,30 @@ long numOfLetters(int num){
     if (tempArray[2] > 0){
         sum += charsInDigits[tempArray[2]] + 7;
         if ((tempArray[1] > 0 || tempArray[0] > 0) && tempArray[2] > 0){
+			#ifdef DEBUG
 			cout << "wut";
+			#endif
             sum += 3;
         }
     }
     if (tempArray[1] > 1){
+		#ifdef DEBUG
+		cout << "lol";
+		#endif
         sum += charsInTens[tempArray[1]];
 	}
-	if (tempArray[0] > 0 && !(num >= 10 && num <= 20)){
+	if (tempArray[0] > 0 && !(num % 100 >= 10 && num % 100 <= 20)){
             sum += charsInDigits[tempArray[0]];
+            #ifdef DEBUG
+            cout << "why?";
+            #endif
     }
     //todo: rewrite handleing of teens
     if (num%100 >= 10 && num%100 <= 20){
         sum += charsInTeens[tempArray[0]];
+		#ifdef DEBUG
+        cout << "lullllzzz";
+        #endif
     }
     /*cout<<"here it goes  ";
     cout<<tempArray[2]<<"  " <<tempArray[1]<<"   " <<tempArray[0];
