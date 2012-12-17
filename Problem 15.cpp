@@ -2,25 +2,30 @@
 #include<cstdlib>
 #include<cmath>
 
-using namespace std;
-long double fact(long long num);
+//#define DEBUG
 
+using namespace std;
+
+/* TODO (geekman7473#1#): Rewrite for use with arbitrary length integers */
 
 int main(){
 	while (true) {
-    long base = 2;
+	unsigned long long product = 1;
+    double base = 2;
 	cout << "Enter a size of grid ";
 	cin >> base;
-	cout << fact(base*2)/(fact(base) * fact(base));
+	for (double i = 1; i <= base; i++){
+		#ifdef DEBUG
+		cout << endl << base <<" " << i << " " << base + i << " " << (base + i) / i;
+		cout << " " << product;
+		#endif
+		product *= (base + i) / i;
+		#ifdef DEBUG
+		cout << " " << product;
+		#endif
+	}
+	cout << endl << product << endl;
+	system("PAUSE");
 }
 return (0);
-}
-
-
-long double fact(long long num){
-	long double product = 1;
-	for (long long i = 1; i <= num; i++){
-		product *= i;
-	}
-	return (product);
 }
