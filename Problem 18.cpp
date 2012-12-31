@@ -30,13 +30,9 @@ int main(){
 	
 	for (short i = ROWS - 2; i > -1; i--){//Goes through rows starting at row one from bottom
 		for (short j = 0; j <= i+1; j++){//runs through horizontal members
-			triGrid[i][j] += greatestVal(triGrid[i+1][j], triGrid[i+1][j+1]);
+			triGrid[i][j] += triGrid[i+1][j] > triGrid[i+1][j+1] ? triGrid[i+1][j] : triGrid[i+1][j+1];
 		}
 	}
 	cout << triGrid[0][0] << endl;
 	system("PAUSE");
-}
-
-short greatestVal(short numA, short numB){
-	return (numA > numB ? numA : numB);
 }
