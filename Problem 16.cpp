@@ -27,8 +27,13 @@ while (true){
 			for (double y = 0; product[pos] >= pow(10, y); y++){//Carrys digits accordingly
 		    	if (y != 0){
               		int YInt = y;
-		       		product[pos + YInt] += floor(product [pos] / pow(10, y));
-		       		product[pos] -= floor(product [pos] / pow(10, y)) * 10;
+              		if(pos + YInt > product.size()-1){
+						product.push_back (floor(product [pos] / pow(10, y)));
+						product[pos] -= floor(product [pos] / pow(10, y)) * 10;
+              		} else {
+		       			product[pos + YInt] += floor(product [pos] / pow(10, y));
+		       			product[pos] -= floor(product [pos] / pow(10, y)) * 10;
+					}
            		}
 			}
 		}
