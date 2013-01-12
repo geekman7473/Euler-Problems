@@ -2,6 +2,8 @@
 #include<string>
 #include<algorithm>
 #include<cmath>
+#include <iomanip>
+#include <fstream>
 
 #define DEBUG
 
@@ -10,21 +12,50 @@ using namespace std;
 short letterValue (char letter);
 bool isFirstStringLess (string string1, string string2);
 long long expStringValue (string word);
+void alphSort ();
+
+vector<string> names;
 
 int main(){
-cout << letterValue('A') << " " << letterValue('Z') << " " << expStringValue("JOHN");
+
+long long sumOfScores = 0;
+
+for (int i = 0; i < names.size(); i++){
+    sumOfScores += (i + 1) * alphaSum(names[i]);
+}
+cout << sumOfScores;
 system("PAUSE");
+}
+
+void alphSort (){
+    string swapVal;
+    for (int i = 0; i < names.size() -1 ; i++){
+        if (expStringValue(names[i]) > expStringValue(names[i + 1])){
+            swapVal = names[i + 1];
+            names[i + 1] = names[i];
+            names[i] = swapVal;
+            i = 0
+        }
+    }
 }
 
 long long expStringValue (string word){
     long long StringVal = 0;
     for (int i = 0; i < word.length(); i++){
-        StringVal += letterValue(word[i]) * pow(26, word.length() - (i + 1));
+        StringVal += letterValue(word[i]) * pow(27, word.length() - (i + 1));
         #ifdef DEBUG
-        cout << word.length() << " " << i << " " << pow(26, word.length() - (i + 1)) << " " << letterValue(word[i]) << " " << endl;
+        cout << word.length() << " " << i << " " << pow(27, word.length() - (i + 1)) << " " << letterValue(word[i]) << " " << endl;
         #endif
     }
     return (StringVal);
+}
+
+long long alphaSum (string word){
+    long long sum = 0;
+    for (int i = 0; i < word.length(); i++){
+        sum += letterValue(word[i])
+    }
+    return (sum);
 }
 
 short letterValue (char letter){
