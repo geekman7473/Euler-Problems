@@ -60,16 +60,6 @@ void alphSort (){
     } while (!isSorted);
 }
 
-/*long long expStringValue (string word){
-    long long StringVal = 0;
-    for (int i = 0; i < word.length(); i++){
-        StringVal += letterValue(word[i]) * pow(27, word.length() - (i + 1));
-        #ifdef DEBUG
-        //cout << word.length() << " " << i << " " << pow(27, word.length() - (i + 1)) << " " << letterValue(word[i]) << " " << endl;
-        #endif
-    }
-    return (StringVal);
-}*/
 
 long long alphaSum (string word){
     long long sum = 0;
@@ -80,7 +70,7 @@ long long alphaSum (string word){
 }
 
 short letterValue (char letter){
-    char letterDict [26] = {'A','B','C','D','E','F','GInput.length() - 1','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    char letterDict [26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
     for (short i = 0; i < 26; i++){
         if (letterDict [i] == letter){
             return (i + 1);
@@ -102,14 +92,11 @@ void populate_vector(){
         exit(EXIT_FAILURE);
     }
     openFile >> Input;
-    //cout << Input;
     string tempWord = "";
     cout << Input.length() << " ";
     for (long i = 0; i <= Input.length(); i++){
-            //cout << "TEST1 " << endl;
         if (Input[i] == '"'){
         } else if (Input[i] == ',' || i == Input.length()){
-            //cout << endl << i;
             names.push_back(tempWord);
             tempWord = "";
         } else {
