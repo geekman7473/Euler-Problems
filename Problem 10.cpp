@@ -12,7 +12,6 @@ long long sum = 0;
 for(int i = 2; i <= range; i++){
     if (isPrime(i)){
         sum += i;
-        //cout << i << " " << sum;
     }
 }
 cout << sum << endl;
@@ -20,16 +19,7 @@ system("PAUSE");
 }
 
 bool isPrime(int num){
-     #ifdef DEBUG
-     cout << "test1";
-	system("PAUSE");
-	#endif
-	float numFloat = num;
-	for (int i = 2; i <= sqrt(numFloat); i++){
-        #ifdef DEBUG
-	    cout << i << " " << sqrt(numFloat) << endl;
-		system("PAUSE");
-		#endif
+	for (int i = 2; i <= sqrt((float)num); i++){
 		if (num % i == 0){
 			return (false);
 		}

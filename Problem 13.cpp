@@ -126,10 +126,6 @@ int main (){
         tempSum += grid[currentNum][currentDigit] - '0'; // adds current digits place to tempSum
         }
         for (int x = 1; tempSum != 0; x++){ //converts numbers to digits in final sum
-           #ifdef DEBUG
-            cout <<currentDigit << " " << tempSum << " " << tempSum % 10 << " " << sum[(49 - currentDigit) + (x - 1)] << endl;
-            system("PAUSE");
-            #endif
             sum[(49 - currentDigit) + (x - 1)] += tempSum % 10;
             tempSum -= tempSum % 10;
             tempSum /= 10;

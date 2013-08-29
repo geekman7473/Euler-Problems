@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-//#define DEBUG
 
 using namespace std;
 
@@ -22,16 +21,8 @@ int main(){
 }
 
 bool isPrime(long long num){
-     #ifdef DEBUG
-     cout << "test1";
-	system("PAUSE");
-	#endif
 	long double numFloat = num;
 	for (long long i = 2; i <= sqrt(numFloat); i++){
-        #ifdef DEBUG
-	    cout << i << " " << sqrt(numFloat) << endl;
-		system("PAUSE");
-		#endif
 		if (num % i == 0){
 			return (false);
 		}
